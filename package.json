@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@snapsechq/rabbitmq": "^0.1.0",
     "amqplib": "^0.10.7",
     "axios": "1.16.0",
     "body-parser": "^2.2.0",
