@@ -113,11 +113,21 @@ async function emailNotificationHandler(payload, msg, channel) {
                 console.log(`${logPrefix} [>] Sending to ${reciever.email} with Subject: "${context.subject}"${processedAttachments.length > 0 ? ` with ${processedAttachments.length} attachment(s)` : ''}...`);
 
                 const mailOptions = {
-                    from: appConfig.EMAIL_FROM,
+                    from: (payload.sender && payload.sender.from) || appConfig.EMAIL_FROM,
                     to: reciever.email,
                     subject: context.subject,
                     html: emailBody,
                 };
+
+                const cc = reciever.cc || payload.cc || context.cc;
+                if (cc) {
+                    mailOptions.cc = cc;
+                }
+
+                const replyTo = reciever.replyTo || payload.replyTo || context.replyTo;
+                if (replyTo) {
+                    mailOptions.replyTo = replyTo;
+                }
 
                 // Add attachments if present
                 if (processedAttachments.length > 0) {

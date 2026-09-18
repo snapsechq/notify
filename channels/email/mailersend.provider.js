@@ -36,7 +36,7 @@ class MailerSendProvider {
      * @param {string} [options.fromName] - Sender name (optional, uses default)
      * @param {string} [options.trace_id] - Trace ID for logging
      */
-    async send({ to, subject, html, text, from, fromName, trace_id }) {
+    async send({ to, subject, html, text, from, fromName, cc, replyTo, trace_id }) {
         const traceId = trace_id || `ms-${Date.now()}`;
 
         if (!this.apiKey) {
@@ -57,6 +57,16 @@ class MailerSendProvider {
             html: html,
             text: text || this._stripHtml(html)
         };
+
+        if (cc) {
+            payload.cc = Array.isArray(cc)
+                ? cc.map(c => typeof c === 'string' ? { email: c } : c)
+                : [{ email: cc }];
+        }
+
+        if (replyTo) {
+            payload.reply_to = typeof replyTo === 'string' ? { email: replyTo } : replyTo;
+        }
 
         try {
             console.log(`[${traceId}] [MailerSend] Sending email to ${to}`);

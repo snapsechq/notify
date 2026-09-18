@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-        .container { padding: 20px; }
-        .btn { display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #222222;
+            margin: 0;
+            padding: 24px;
+            background-color: #ffffff;
+        }
+        p {
+            margin: 0 0 16px 0;
+        }
+        a {
+            color: #1379f0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <p>Hello {{name}},</p>
-        
-        <p>Thank you for signing up for a Snapsec demo.</p>
-        
-        <p>Imran and Mubashir have been assigned to work with you and will take it forward from here. They will be in touch with you shortly on this same email thread.</p>
-        
-        <p>In the meantime, if you needs some quick help, you may also connect with them via WhatsApp using the links below:</p>
-        
-        <p>Mubashir — <a href="https://wa.me/919906736917?text=Hi%20Mubashir,%20I%20am%20interested%20in%20learning%20more%20about%20Snapsec%20Suite.">WhatsApp link</a></p>
-        
-        <p>We look forward to speaking with you.</p>
-        
-        <p>Kind regards,<br>
-        Team Snapsec</p>
-    </div>
+    <p>Hi {{#if firstname}}{{firstname}}{{else if firstName}}{{firstName}}{{else}}{{name}}{{/if}},</p>
+
+    <p>Thank you for signing up for Snapsec Demo account.</p>
+
+    <p>As you explore the platform, I wanted to make sure you know that our team is here if you need any help or have questions:</p>
+
+    <p>
+        Product-related questions: <a href="mailto:imran@snapsec.co">imran@snapsec.co</a><br>
+        Sales-related questions: <a href="mailto:mubashir@snapsec.co">mubashir@snapsec.co</a><br>
+        Engineering-related questions: <a href="mailto:shoaib@snapsec.co">shoaib@snapsec.co</a>
+    </p>
+
+    <p>Feel free to reach out to the relevant team directly, and we’ll be happy to help.</p>
+
+    <p>Best,<br>Snapsec Team</p>
 </body>
 </html>
