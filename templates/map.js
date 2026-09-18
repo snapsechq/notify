@@ -48,6 +48,12 @@ module.exports = [
         type: "email"
     },
     {
+        template_id: "LEAD_THANK_YOU",
+        template_path: "/templates/email/WELCOME_EMAIL.hbs",
+        active: true,
+        type: "email"
+    },
+    {
         template_id: "GENERIC_EMAIL",
         template_path: "/templates/email/GENERIC_EMAIL.hbs",
         active: true,
