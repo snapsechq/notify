@@ -1,5 +1,5 @@
-import createAuth from "@snapsechq/authentication";
-import { appConfig } from "../../config/app.config.js";
+const createAuth = require("@snapsechq/authentication");
+const { appConfig } = require("../../config/app.config.js");
 
 const authSuite = createAuth({
   publicKeyPath: appConfig.PUBLIC_KEY_PATH,
@@ -8,8 +8,8 @@ const authSuite = createAuth({
   activityOrigin: "notify",
   onActivityLog: async (log) => {
     try {
-      const { mqbroker } = await import("../../services/rabbitmq.service.js");
-      if (mqbroker?.publish) {
+      const { mqbroker } = require("../../services/rabbitmq.service.js");
+      if (mqbroker && mqbroker.publish) {
         await mqbroker.publish("activitylogs", "activitylogs.all", log);
       }
     } catch (err) {
@@ -18,17 +18,17 @@ const authSuite = createAuth({
   },
 });
 
-export const requireApiKeyAuth = authSuite.auth({
+const requireApiKeyAuth = authSuite.auth({
   mode: ["api_key", "internal"],
 });
 
-export const auth = authSuite.auth;
-export const requireAuth = authSuite.requireAuth;
-export const optionalAuth = authSuite.optionalAuth;
-export const requireAdmin = authSuite.requireAdmin;
-export const requireManager = authSuite.requireManager;
-export const requireMember = authSuite.requireMember;
-export const authenticateService = authSuite.authenticateService;
-export const requireWriteAccess = authSuite.requireWriteAccess;
-
-export default authSuite.auth;
+module.exports = authSuite.auth;
+module.exports.auth = authSuite.auth;
+module.exports.requireAuth = authSuite.requireAuth;
+module.exports.optionalAuth = authSuite.optionalAuth;
+module.exports.requireAdmin = authSuite.requireAdmin;
+module.exports.requireManager = authSuite.requireManager;
+module.exports.requireMember = authSuite.requireMember;
+module.exports.authenticateService = authSuite.authenticateService;
+module.exports.requireWriteAccess = authSuite.requireWriteAccess;
+module.exports.requireApiKeyAuth = requireApiKeyAuth;
