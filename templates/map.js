@@ -118,6 +118,12 @@ module.exports = [
         template_path: "/templates/email/VULN_RISK_ACCEPTED.hbs",
         active: true,
         type: "email"
+    },
+    {
+        template_id: "REPORT_GENERATED_NOTIFICATION",
+        template_path: "/templates/email/REPORT_GENERATED.hbs",
+        active: true,
+        type: "email"
     }
 ];
 
