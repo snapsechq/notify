@@ -54,7 +54,8 @@ async function notificationHandler(payload, msg, channel) {
         const isSelfAllowedNotification = payload.allowSelfNotification ||
             payload.template_id === 'REMEDIATION_CAMPAIGN_ASSIGNED_NOTIFICATION' ||
             payload.template_id === 'CAMPAIGN_ASSIGNED_NOTIFICATION' ||
-            payload.template_id === 'BLOCKER_ASSIGNED_NOTIFICATION';
+            payload.template_id === 'BLOCKER_ASSIGNED_NOTIFICATION' ||
+            payload.template_id === 'VULN_RISK_ACCEPTED_NOTIFICATION';
 
         if (actorId && !isSelfAllowedNotification) {
             uniqueRecipientsMap.forEach((val, key) => {

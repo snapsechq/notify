@@ -112,5 +112,12 @@ module.exports = [
         template_path: "/templates/email/AIM_POLICY_ALERT.hbs",
         active: true,
         type: "email"
+    },
+    {
+        template_id: "VULN_RISK_ACCEPTED_NOTIFICATION",
+        template_path: "/templates/email/VULN_RISK_ACCEPTED.hbs",
+        active: true,
+        type: "email"
     }
 ];
+
