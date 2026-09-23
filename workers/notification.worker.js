@@ -49,8 +49,13 @@ async function notificationHandler(payload, msg, channel) {
         // Store all resolved target recipients for in-app storage
         const allResolvedRecipients = Array.from(uniqueRecipientsMap.values());
 
-        // Originator Exclusion: Strictly filter out the actor from external DELIVERY channels
-        if (actorId) {
+        // Originator Exclusion: Strictly filter out the actor from external DELIVERY channels.
+        // Exception: Explicit assignment notifications (e.g., remediation campaign assigned) or when allowSelfNotification is true.
+        const isSelfAllowedNotification = payload.allowSelfNotification ||
+            payload.template_id === 'REMEDIATION_CAMPAIGN_ASSIGNED_NOTIFICATION' ||
+            payload.template_id === 'CAMPAIGN_ASSIGNED_NOTIFICATION';
+
+        if (actorId && !isSelfAllowedNotification) {
             uniqueRecipientsMap.forEach((val, key) => {
                 if (String(val.userId) === String(actorId)) {
                     console.log(`[NOTIFY] Strictly excluding Actor ${actorId} from external delivery channels`);

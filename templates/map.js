@@ -66,6 +66,18 @@ module.exports = [
         type: "email"
     },
     {
+        template_id: "REMEDIATION_CAMPAIGN_ASSIGNED_NOTIFICATION",
+        template_path: "/templates/email/REMEDIATION_CAMPAIGN_ASSIGNED.hbs",
+        active: true,
+        type: "email"
+    },
+    {
+        template_id: "CAMPAIGN_ASSIGNED_NOTIFICATION",
+        template_path: "/templates/email/REMEDIATION_CAMPAIGN_ASSIGNED.hbs",
+        active: true,
+        type: "email"
+    },
+    {
         template_id: "WEEKLY_TICKET_REMINDER",
         template_path: "/templates/email/WEEKLY_REMINDER.hbs",
         active: true,
