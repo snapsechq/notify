@@ -57,6 +57,8 @@ async function notificationHandler(payload, msg, channel) {
             payload.template_id === 'BLOCKER_ASSIGNED_NOTIFICATION' ||
             payload.template_id === 'VULN_RISK_ACCEPTED_NOTIFICATION' ||
             payload.template_id === 'VULN_ASSIGNED_NOTIFICATION' ||
+            payload.template_id === 'AUTOMATION_ALERT_NOTIFICATION' ||
+            payload.template_id === 'AUTOMATION_ALERT' ||
             payload.template_id === 'REPORT_GENERATED_NOTIFICATION';
 
         if (actorId && !isSelfAllowedNotification) {

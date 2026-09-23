@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation Rule Alert - SnapSec</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        td {
+            padding: 0;
+        }
+
+        img {
+            border: 0;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            -ms-interpolation-mode: bicubic;
+        }
+
+        @media screen and (max-width: 520px) {
+            .mobile-padding {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+
+            .mobile-width {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            .stack-column {
+                display: block !important;
+                width: 100% !important;
+                padding: 10px 0 !important;
+            }
+        }
+    </style>
+</head>
+
+<body
+    style="margin: 0; padding: 0; background-color: #f3f4f6; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+
+    <!-- Wrapper Table -->
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #f3f4f6; width: 100%;">
+        <tr>
+            <td align="center" style="padding: 48px 16px;">
+
+                <!-- Main Email Card -->
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mobile-width"
+                    style="max-width: 540px; width: 100%; background-color: #ffffff; border-radius: 24px; border: 1px solid #e5e7eb; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-collapse: separate;">
+
+                    <!-- Top Accent Bar (Blue) -->
+                    <tr>
+                        <td height="6"
+                            style="background-color: #2563eb; line-height: 6px; font-size: 6px; border-radius: 24px 24px 0 0;">
+                            &nbsp;</td>
+                    </tr>
+
+                    <!-- Header Section -->
+                    <tr>
+                        <td align="center" style="padding: 44px 40px 24px 40px;" class="mobile-padding">
+                            <!-- Logo Box -->
+                            <table border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td align="center" valign="middle" width="64" height="64"
+                                        style="background-color: #eff6ff; border-radius: 16px; border: 1px solid #dbeafe;">
+                                        <img src="{{logo_url}}" width="40"
+                                            alt="SnapSec Logo" style="display: block; border: 0;">
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <h1
+                                style="color: #111827; font-size: 22px; font-weight: 700; margin: 20px 0 0 0; letter-spacing: -0.02em; line-height: 1.2;">
+                                Automation Rule Alert
+                            </h1>
+                            <p style="color: #4b5563; font-size: 14px; margin: 8px 0 0 0; line-height: 1.5;">
+                                A workflow automation rule was triggered and matched vulnerabilities.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Details Section -->
+                    <tr>
+                        <td style="padding: 0 40px 36px 40px;" class="mobile-padding">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+                                <!-- Custom Message (if present) -->
+                                {{#if message}}
+                                <tr>
+                                    <td style="padding-bottom: 20px;">
+                                        <div style="background-color: #f8fafc; border-left: 4px solid #2563eb; border-radius: 4px; padding: 12px 16px; font-size: 14px; color: #1e293b; line-height: 1.5;">
+                                            {{{message}}}
+                                        </div>
+                                    </td>
+                                </tr>
+                                {{/if}}
+
+                                <!-- Rule Details Card -->
+                                <tr>
+                                    <td style="padding-bottom: 20px;">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                            style="background-color: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; padding: 16px 18px;">
+                                            <tr>
+                                                <td colspan="2" style="padding-bottom: 12px;">
+                                                    <p style="color: #64748b; font-size: 11px; font-weight: 600; text-transform: uppercase; margin: 0 0 4px 0;">
+                                                        Rule Name</p>
+                                                    <p style="color: #0f172a; font-size: 16px; font-weight: 700; margin: 0;">
+                                                        {{ruleName}}</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="stack-column" width="50%" style="vertical-align: top; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+                                                    <p style="color: #64748b; font-size: 11px; font-weight: 600; text-transform: uppercase; margin: 0 0 4px 0;">
+                                                        Matched Count</p>
+                                                    <p style="color: #2563eb; font-size: 15px; font-weight: 700; margin: 0;">
+                                                        {{count}}</p>
+                                                </td>
+                                                <td class="stack-column" width="50%" style="vertical-align: top; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+                                                    <p style="color: #64748b; font-size: 11px; font-weight: 600; text-transform: uppercase; margin: 0 0 4px 0;">
+                                                        Severity</p>
+                                                    <p style="color: #0f172a; font-size: 14px; font-weight: 600; margin: 0;">
+                                                        {{severity}}</p>
+                                                </td>
+                                            </tr>
+                                            {{#if assets}}
+                                            <tr>
+                                                <td colspan="2" style="padding-top: 12px; border-top: 1px dashed #cbd5e1; margin-top: 10px;">
+                                                    <p style="color: #64748b; font-size: 11px; font-weight: 600; text-transform: uppercase; margin: 0 0 4px 0;">
+                                                        Affected Asset(s)</p>
+                                                    <p style="color: #0f172a; font-size: 13px; font-weight: 500; margin: 0;">
+                                                        {{assets}}</p>
+                                                </td>
+                                            </tr>
+                                            {{/if}}
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <!-- Attachment Notice Box -->
+                                {{#if attachmentFilename}}
+                                <tr>
+                                    <td style="padding-bottom: 24px;">
+                                        <div style="background-color: #eff6ff; border: 1px solid #bfdbfe; border-radius: 12px; padding: 14px 16px;">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="28" valign="top" style="font-size: 18px; line-height: 1;">
+                                                        📎
+                                                    </td>
+                                                    <td style="font-size: 13px; color: #1e40af; line-height: 1.5;">
+                                                        Detailed information for all <strong>{{count}}</strong> matched vulnerabilities is attached as an Excel report: <br>
+                                                        <strong>{{attachmentFilename}}</strong>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {{/if}}
+
+                                <!-- CTA Button -->
+                                <tr>
+                                    <td align="center" style="padding-bottom: 12px;">
+                                        <a href="https://{{base_url}}/vm/automation-engine"
+                                            style="background-color: #2563eb; border-radius: 12px; color: #ffffff; display: inline-block; font-size: 15px; font-weight: 600; line-height: 48px; text-align: center; text-decoration: none; width: 100%; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);">
+                                            View Automation Rules
+                                        </a>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td align="center"
+                            style="padding: 30px 40px; background-color: #f9fafb; border-top: 1px solid #f3f4f6;"
+                            class="mobile-padding">
+                            <p
+                                style="color: #64748b; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; margin: 0;">
+                                &copy; {{year}} SnapSec Suite. All rights reserved.
+                            </p>
+                            <p style="color: #94a3b8; font-size: 12px; margin: 8px 0 0 0;">
+                                You received this notification based on your configured workflow automation rules.
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

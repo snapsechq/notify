@@ -124,6 +124,18 @@ module.exports = [
         template_path: "/templates/email/REPORT_GENERATED.hbs",
         active: true,
         type: "email"
+    },
+    {
+        template_id: "AUTOMATION_ALERT_NOTIFICATION",
+        template_path: "/templates/email/AUTOMATION_ALERT.hbs",
+        active: true,
+        type: "email"
+    },
+    {
+        template_id: "AUTOMATION_ALERT",
+        template_path: "/templates/email/AUTOMATION_ALERT.hbs",
+        active: true,
+        type: "email"
     }
 ];
 
