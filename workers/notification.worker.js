@@ -53,7 +53,8 @@ async function notificationHandler(payload, msg, channel) {
         // Exception: Explicit assignment notifications (e.g., remediation campaign assigned) or when allowSelfNotification is true.
         const isSelfAllowedNotification = payload.allowSelfNotification ||
             payload.template_id === 'REMEDIATION_CAMPAIGN_ASSIGNED_NOTIFICATION' ||
-            payload.template_id === 'CAMPAIGN_ASSIGNED_NOTIFICATION';
+            payload.template_id === 'CAMPAIGN_ASSIGNED_NOTIFICATION' ||
+            payload.template_id === 'BLOCKER_ASSIGNED_NOTIFICATION';
 
         if (actorId && !isSelfAllowedNotification) {
             uniqueRecipientsMap.forEach((val, key) => {

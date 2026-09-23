@@ -78,6 +78,12 @@ module.exports = [
         type: "email"
     },
     {
+        template_id: "BLOCKER_ASSIGNED_NOTIFICATION",
+        template_path: "/templates/email/BLOCKER_ASSIGNED.hbs",
+        active: true,
+        type: "email"
+    },
+    {
         template_id: "WEEKLY_TICKET_REMINDER",
         template_path: "/templates/email/WEEKLY_REMINDER.hbs",
         active: true,
