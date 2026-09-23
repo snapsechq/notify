@@ -136,6 +136,18 @@ module.exports = [
         template_path: "/templates/email/AUTOMATION_ALERT.hbs",
         active: true,
         type: "email"
+    },
+    {
+        template_id: "AIM_ASSET_STAGED_APPROVAL_NOTIFICATION",
+        template_path: "/templates/email/AIM_ASSET_STAGED_APPROVAL.hbs",
+        active: true,
+        type: "email"
+    },
+    {
+        template_id: "AIM_ASSET_STAGED_APPROVAL",
+        template_path: "/templates/email/AIM_ASSET_STAGED_APPROVAL.hbs",
+        active: true,
+        type: "email"
     }
 ];
 

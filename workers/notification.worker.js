@@ -60,6 +60,8 @@ async function notificationHandler(payload, msg, channel) {
             payload.template_id === 'AUTOMATION_ALERT_NOTIFICATION' ||
             payload.template_id === 'AUTOMATION_ALERT' ||
             payload.template_id === 'AIM_POLICY_ALERT' ||
+            payload.template_id === 'AIM_ASSET_STAGED_APPROVAL_NOTIFICATION' ||
+            payload.template_id === 'AIM_ASSET_STAGED_APPROVAL' ||
             payload.template_id === 'REPORT_GENERATED_NOTIFICATION';
 
         if (actorId && !isSelfAllowedNotification) {
