@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Acceptance Requested - SnapSec</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles for email clients */
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        td {
+            padding: 0;
+        }
+
+        img {
+            border: 0;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            -ms-interpolation-mode: bicubic;
+        }
+
+        /* Mobile specific styles */
+        @media screen and (max-width: 520px) {
+            .mobile-padding {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+
+            .mobile-width {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            .stack-column {
+                display: block !important;
+                width: 100% !important;
+                padding: 10px 0 !important;
+            }
+        }
+    </style>
+</head>
+
+<body
+    style="margin: 0; padding: 0; background-color: #f3f4f6; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+
+    <!-- Wrapper Table -->
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #f3f4f6; width: 100%;">
+        <tr>
+            <td align="center" style="padding: 48px 16px;">
+
+                <!-- Main Email Card -->
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mobile-width"
+                    style="max-width: 520px; width: 100%; background-color: #ffffff; border-radius: 24px; border: 1px solid #e5e7eb; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-collapse: separate;">
+
+                    <!-- Top Accent Bar (Amber for Risk Accepted) -->
+                    <tr>
+                        <td height="6"
+                            style="background-color: #f59e0b; line-height: 6px; font-size: 6px; border-radius: 24px 24px 0 0;">
+                            &nbsp;</td>
+                    </tr>
+
+                    <!-- Header Section -->
+                    <tr>
+                        <td align="center" style="padding: 44px 40px 28px 40px;" class="mobile-padding">
+                            <!-- Logo Box -->
+                            <table border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td align="center" valign="middle" width="64" height="64"
+                                        style="background-color: #fffbeb; border-radius: 16px; border: 1px solid #fef3c7;">
+                                        <img src="{{logo_url}}" width="40"
+                                            alt="SnapSec Logo" style="display: block; border: 0;">
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <h1
+                                style="color: #111827; font-size: 22px; font-weight: 700; margin: 20px 0 0 0; letter-spacing: -0.02em; line-height: 1.2;">
+                                Vulnerability Moved to Risk Accepted
+                            </h1>
+                            <p style="color: #4b5563; font-size: 14px; margin: 8px 0 0 0; line-height: 1.5;">
+                                A vulnerability has been submitted for risk acceptance.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Details Section -->
+                    <tr>
+                        <td style="padding: 0 40px 36px 40px;" class="mobile-padding">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+                                <!-- Vulnerability Title -->
+                                <tr>
+                                    <td style="padding-bottom: 20px;">
+                                        <p
+                                            style="color: #64748b; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 6px 0;">
+                                            Vulnerability</p>
+                                        <p
+                                            style="color: #111827; font-size: 18px; font-weight: 700; margin: 0; line-height: 1.3;">
+                                            {{vuln.title}}</p>
+                                        {{#if assessmentTitle}}
+                                        <p style="color: #64748b; font-size: 13px; margin: 6px 0 0 0; line-height: 1.5;">
+                                            Assessment: <strong>{{assessmentTitle}}</strong>
+                                        </p>
+                                        {{/if}}
+                                    </td>
+                                </tr>
+
+                                <!-- Status & Metadata Card -->
+                                <tr>
+                                    <td style="padding-bottom: 20px;">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                            style="background-color: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; padding: 14px 16px;">
+                                            <tr>
+                                                <td class="stack-column" width="50%" style="vertical-align: top;">
+                                                    <p style="color: #64748b; font-size: 11px; font-weight: 600; text-transform: uppercase; margin: 0 0 4px 0;">
+                                                        State Transition</p>
+                                                    <p style="color: #0f172a; font-size: 13px; font-weight: 600; margin: 0;">
+                                                        <span style="color: #64748b;">{{previousState}}</span> &rarr; <span style="color: #d97706; font-weight: 700;">Risk Accepted</span>
+                                                    </p>
+                                                </td>
+                                                <td class="stack-column" width="50%" style="vertical-align: top;">
+                                                    <p style="color: #64748b; font-size: 11px; font-weight: 600; text-transform: uppercase; margin: 0 0 4px 0;">
+                                                        Severity</p>
+                                                    <p style="color: #ef4444; font-size: 13px; font-weight: 700; margin: 0; text-transform: capitalize;">
+                                                        {{vuln.severity}}</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" style="padding-top: 12px; border-top: 1px dashed #cbd5e1; margin-top: 10px;">
+                                                    <p style="color: #64748b; font-size: 11px; font-weight: 600; text-transform: uppercase; margin: 0 0 4px 0;">
+                                                        Requested By</p>
+                                                    <p style="color: #0f172a; font-size: 13px; font-weight: 600; margin: 0;">
+                                                        {{actorName}}{{#if actorEmail}} <span style="color: #64748b; font-weight: normal;">({{actorEmail}})</span>{{/if}}
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <!-- Risk Acceptance Details Card -->
+                                <tr>
+                                    <td style="padding-bottom: 24px;">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                            style="background-color: #fffbeb; border-radius: 12px; border: 1px solid #fde68a; padding: 14px 16px;">
+                                            <tr>
+                                                <td style="vertical-align: top; padding-bottom: 10px;">
+                                                    <p style="color: #92400e; font-size: 11px; font-weight: 600; text-transform: uppercase; margin: 0 0 4px 0;">
+                                                        Reason</p>
+                                                    <p style="color: #1f2937; font-size: 13px; line-height: 1.5; margin: 0;">
+                                                        {{reason}}</p>
+                                                </td>
+                                            </tr>
+                                            {{#if businessJustification}}
+                                            <tr>
+                                                <td style="vertical-align: top; padding-top: 10px; border-top: 1px dashed #fcd34d;">
+                                                    <p style="color: #92400e; font-size: 11px; font-weight: 600; text-transform: uppercase; margin: 0 0 4px 0;">
+                                                        Business Justification</p>
+                                                    <p style="color: #1f2937; font-size: 13px; line-height: 1.5; margin: 0;">
+                                                        {{businessJustification}}</p>
+                                                </td>
+                                            </tr>
+                                            {{/if}}
+                                            {{#if compensatingControls}}
+                                            <tr>
+                                                <td style="vertical-align: top; padding-top: 10px; border-top: 1px dashed #fcd34d;">
+                                                    <p style="color: #92400e; font-size: 11px; font-weight: 600; text-transform: uppercase; margin: 0 0 4px 0;">
+                                                        Compensating Controls</p>
+                                                    <p style="color: #1f2937; font-size: 13px; line-height: 1.5; margin: 0;">
+                                                        {{compensatingControls}}</p>
+                                                </td>
+                                            </tr>
+                                            {{/if}}
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <!-- CTA Button -->
+                                <tr>
+                                    <td align="center" style="padding-bottom: 28px;">
+                                        <!--[if mso]>
+                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{action_url}}" style="height:48px;v-text-anchor:middle;width:240px;" arcsize="25%" stroke="f" fillcolor="#d97706">
+                                          <w:anchorlock/>
+                                          <center>
+                                        <![endif]-->
+                                        <a href="{{action_url}}"
+                                            style="background-color: #d97706; border-radius: 12px; color: #ffffff; display: inline-block; font-size: 15px; font-weight: 600; line-height: 48px; text-align: center; text-decoration: none; width: 100%; box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);">
+                                            Review Risk Acceptance
+                                        </a>
+                                        <!--[if mso]>
+                                          </center>
+                                        </v:roundrect>
+                                        <![endif]-->
+                                    </td>
+                                </tr>
+
+                                <!-- Message Divider -->
+                                <tr>
+                                    <td style="border-top: 1px solid #f1f5f9; padding-top: 24px;">
+                                        <p style="color: #4b5563; font-size: 14px; line-height: 1.6; margin: 0;">
+                                            Hello Admin,<br><br>
+                                            <strong>{{actorName}}</strong> has requested risk acceptance for vulnerability <strong>"{{vuln.title}}"</strong>.
+                                            As an administrator, please review the submitted business justification and compensating controls.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td align="center"
+                            style="padding: 36px 40px; background-color: #f9fafb; border-top: 1px solid #f3f4f6;"
+                            class="mobile-padding">
+                            <p
+                                style="color: #64748b; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; margin: 0;">
+                                &copy; {{year}} SnapSec Suite. All rights reserved.
+                            </p>
+                            <p style="color: #94a3b8; font-size: 12px; margin: 4px 0 0 0;">
+                                Unified Cybersecurity Products & Solutions
+                            </p>
+
+                            <!-- Footer Links -->
+                            <table border="0" cellspacing="0" cellpadding="0" style="margin-top: 20px;">
+                                <tr>
+                                    <td style="padding: 0 12px;">
+                                        <a href="{{base_url}}"
+                                            style="color: #1379f0; text-decoration: none; font-weight: 600; font-size: 13px;">Dashboard</a>
+                                    </td>
+                                    <td style="padding: 0 12px;">
+                                        <a href="https://docs.snapsec.co/"
+                                            style="color: #1379f0; text-decoration: none; font-weight: 600; font-size: 13px;">Help Center</a>
+                                    </td>
+                                    <td style="padding: 0 12px;">
+                                        <a href="https://snapsec.co/privacy"
+                                            style="color: #1379f0; text-decoration: none; font-weight: 600; font-size: 13px;">Privacy</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- Bottom Meta Footer -->
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mobile-width"
+                    style="max-width: 520px; width: 100%; margin-top: 20px;">
+                    <tr>
+                        <td align="center" style="padding: 0 40px 40px 40px;" class="mobile-padding">
+                            <p style="color: #94a3b8; font-size: 11px; line-height: 1.6; margin: 0;">
+                                This is an automated security notification from SnapSec. You can manage your
+                                notification preferences in your profile settings.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

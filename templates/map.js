@@ -66,6 +66,24 @@ module.exports = [
         type: "email"
     },
     {
+        template_id: "REMEDIATION_CAMPAIGN_ASSIGNED_NOTIFICATION",
+        template_path: "/templates/email/REMEDIATION_CAMPAIGN_ASSIGNED.hbs",
+        active: true,
+        type: "email"
+    },
+    {
+        template_id: "CAMPAIGN_ASSIGNED_NOTIFICATION",
+        template_path: "/templates/email/REMEDIATION_CAMPAIGN_ASSIGNED.hbs",
+        active: true,
+        type: "email"
+    },
+    {
+        template_id: "BLOCKER_ASSIGNED_NOTIFICATION",
+        template_path: "/templates/email/BLOCKER_ASSIGNED.hbs",
+        active: true,
+        type: "email"
+    },
+    {
         template_id: "WEEKLY_TICKET_REMINDER",
         template_path: "/templates/email/WEEKLY_REMINDER.hbs",
         active: true,
@@ -94,5 +112,30 @@ module.exports = [
         template_path: "/templates/email/AIM_POLICY_ALERT.hbs",
         active: true,
         type: "email"
+    },
+    {
+        template_id: "VULN_RISK_ACCEPTED_NOTIFICATION",
+        template_path: "/templates/email/VULN_RISK_ACCEPTED.hbs",
+        active: true,
+        type: "email"
+    },
+    {
+        template_id: "REPORT_GENERATED_NOTIFICATION",
+        template_path: "/templates/email/REPORT_GENERATED.hbs",
+        active: true,
+        type: "email"
+    },
+    {
+        template_id: "AUTOMATION_ALERT_NOTIFICATION",
+        template_path: "/templates/email/AUTOMATION_ALERT.hbs",
+        active: true,
+        type: "email"
+    },
+    {
+        template_id: "AUTOMATION_ALERT",
+        template_path: "/templates/email/AUTOMATION_ALERT.hbs",
+        active: true,
+        type: "email"
     }
 ];
+
