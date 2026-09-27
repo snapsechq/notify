@@ -13,6 +13,15 @@ const vsMap = require('./activity-maps/vs');
 
 // endpoint to activity map
 const endpointWithMethodActionMap = {
+    // handle all paths here
+    '^(?!.*auth).*': {
+        'GET': "Viewed page",
+        'POST': "Performed an action",
+        'PUT': "Performed an action",
+        'DELETE': "Performed an action",
+        'PATCH': "Performed an action",
+    },
+
     ...aimMap,
     ...apiSecMap,
     ...asmMap,
