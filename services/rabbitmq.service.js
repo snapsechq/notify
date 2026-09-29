@@ -1,8 +1,8 @@
 /**
  * RabbitMQ Broker for notify
- * Powered by @snapsechq/rabbitmq
+ * Powered by @snapsechq/core
  */
-const { createMqBroker } = require("@snapsechq/rabbitmq");
+const { createMqBroker } = require("@snapsechq/core");
 const { buildRabbitmqUrl } = require("../utils/utils");
 
 const mqbroker = createMqBroker({
