@@ -1,4 +1,4 @@
-const createAuth = require("@snapsechq/authentication");
+const { createAuth } = require("@snapsechq/core");
 const { appConfig } = require("../../config/app.config.js");
 
 const authSuite = createAuth({
