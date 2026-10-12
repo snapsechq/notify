@@ -10,7 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@snapsechq/core": "^0.2.1",
+    "@snapsechq/core": "^0.2.2",
     "amqplib": "^0.10.7",
     "axios": "1.16.0",
     "body-parser": "^2.2.0",
