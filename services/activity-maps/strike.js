@@ -27,12 +27,6 @@ module.exports = {
     [`${STRIKE_BASE_PATH}/scans/[^/]+/cancel`]: {
         'POST': 'Cancelled Strike scan'
     },
-    [`${STRIKE_BASE_PATH}/scans/[^/]+/pause`]: {
-        'POST': 'Paused Strike scan'
-    },
-    [`${STRIKE_BASE_PATH}/scans/[^/]+/resume`]: {
-        'POST': 'Resumed Strike scan'
-    },
     [`${STRIKE_BASE_PATH}/scans/[^/]+/retry`]: {
         'POST': 'Retried Strike scan'
     }
