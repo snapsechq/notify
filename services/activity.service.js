@@ -10,6 +10,7 @@ const tmMap = require('./activity-maps/tm');
 const utilMap = require('./activity-maps/util');
 const vmMap = require('./activity-maps/vm');
 const vsMap = require('./activity-maps/vs');
+const strikeMap = require('./activity-maps/strike');
 
 // endpoint to activity map
 const endpointWithMethodActionMap = {
@@ -32,6 +33,7 @@ const endpointWithMethodActionMap = {
     ...utilMap,
     ...vmMap,
     ...vsMap,
+    ...strikeMap,
 }
 
 

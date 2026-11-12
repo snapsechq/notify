@@ -104,7 +104,7 @@ const getAllNotifications = async (orgId, userId, filter = {}, page = 1, limit =
         });
 
         const supportedFilters = {};
-        supportedFilters.product = ["WAS", "VM", "ASM", "VS", "AIM"];
+        supportedFilters.product = ["WAS", "VM", "ASM", "VS", "AIM", "STRIKE"];
 
         return { notifications: denoisedNotifications, total, unseen, filters: supportedFilters };
     } catch (err) {
